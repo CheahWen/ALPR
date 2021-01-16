@@ -1,0 +1,466 @@
+<GUI>:
+    rows: 2
+    padding: 0
+    spacing: 0
+
+    cam_display_btn: cam_display_btn
+    draw_boxes_btn: draw_boxes_btn
+    full_screen_btn: full_screen_btn
+
+    videoPlaceholder: videoPlaceholder
+    cudaAvailableLabel: cudaAvailableLabel
+
+    lp_placeholder_img_1: lp_placeholder_img_1
+    lp_placeholder_label_1: lp_placeholder_label_1
+    lp_placeholder_timestamp_1: lp_placeholder_timestamp_1
+    lp_owner_label_1: lp_owner_label_1
+    lp_student_label_1: lp_student_label_1
+
+    lp_placeholder_img_2: lp_placeholder_img_2
+    lp_placeholder_label_2: lp_placeholder_label_2
+    lp_placeholder_timestamp_2: lp_placeholder_timestamp_2
+    lp_owner_label_2: lp_owner_label_2
+    lp_student_label_2: lp_student_label_2
+
+    lp_placeholder_img_3: lp_placeholder_img_3
+    lp_placeholder_label_3: lp_placeholder_label_3
+    lp_placeholder_timestamp_3: lp_placeholder_timestamp_3
+    lp_owner_label_3: lp_owner_label_3
+    lp_student_label_3: lp_student_label_3
+
+    lp_placeholder_img_4: lp_placeholder_img_4
+    lp_placeholder_label_4: lp_placeholder_label_4
+    lp_placeholder_timestamp_4: lp_placeholder_timestamp_4
+    lp_owner_label_4: lp_owner_label_4
+    lp_student_label_4: lp_student_label_4
+
+    lp_placeholder_img_5: lp_placeholder_img_5
+    lp_placeholder_label_5: lp_placeholder_label_5
+    lp_placeholder_timestamp_5: lp_placeholder_timestamp_5
+    lp_owner_label_5: lp_owner_label_5
+    lp_student_label_5: lp_student_label_5
+
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint: 0.25, 0.1
+        spacing: 10
+        canvas.before:
+            Color:
+                rgba: (0.7, 0.7, 0.7, 0.6)
+            Rectangle:
+                size: self.width, self.height
+                pos: self.x, self.y-0.05
+        Label:
+            id: cudaAvailableLabel
+            size_hint_x: 0.3
+            bold: True
+            color: (0,1,0,1)
+            font_size: 30
+            background_normal: ''
+
+            canvas.before:
+                Color:
+                    rgba: (0, 0, 0.8, 0.5)
+                Rectangle:
+                    size: self.width, self.height
+                    pos: self.x, self.y-0.05
+        Label:
+            text: 'Carplate Recognition'
+            color: (0,0,0,1)
+            font_size: 20
+
+        BoxLayout:
+            size_hint_x: 0.2
+            orientation: "horizontal"
+
+            Label:
+                text: 'Cam Display'
+                color: (0,0,0,1)
+                font_size: 15
+            CheckBox:
+                id: cam_display_btn
+                active: True
+                on_press: root.on_camdisplay_active(self, self.active)
+
+        BoxLayout:
+            size_hint_x: 0.2
+            orientation: "horizontal"
+
+            Label:
+                text: 'Draw Boxes'
+                color: (0,0,0,1)
+                font_size: 15
+            CheckBox:
+                id: draw_boxes_btn
+                active: True
+                on_press: root.on_drawboxes_active(self, self.active)
+        Button:
+            id: full_screen_btn
+            text: 'FULL SCREEN'
+            size_hint_x: 0.3
+            size_hint_y: 0.8
+            pos_hint: {'y': .1}
+            background_normal: ''
+            background_color: (0.2, 0.2, 0.2, 1.0)
+            on_press: root.toggle_full_screen()
+
+        Button:
+            text: 'QUIT'
+            size_hint_x: 0.2
+            size_hint_y: 0.8
+            pos_hint: {'y': .1}
+            background_normal: ''
+            background_color: (0.2, 0.2, 0.2,  1.0)
+            on_press: root.exit_program()
+
+
+    BoxLayout:
+        orientation: "horizontal"   
+      
+        Image :
+            id: videoPlaceholder
+            allow_stretch: True
+            keep_ratio: False
+
+
+            
+        BoxLayout:
+            size_hint_x: 0.4
+            orientation: "vertical"
+            
+            BoxLayout:
+                orientation: "horizontal"
+                Image :
+                    id: lp_placeholder_img_1
+                    size_hint_x: 0.6                          
+                    allow_stretch: True
+                    keep_ratio: False
+                    canvas:
+                        Color:
+                            rgba: .5, .5, .5, 1
+                        Line:
+                            width: 2
+                            rectangle: self.x, self.y, self.width, self.height
+
+                BoxLayout:
+                    orientation: "vertical"
+                    size_hint_x: 0.4
+                    canvas:
+                        Color:
+                            rgba: .5, .5, .5, 1
+                        Line:
+                            width: 2
+                            rectangle: self.x, self.y, self.width, self.height
+                    Label :
+                        id: lp_placeholder_label_1
+                        color: (0,0,0,1)
+                        bold: True
+                        canvas:
+                            Color:
+                                rgba: (0.8, 0.8, 0.8, 0.5)
+                            Rectangle:
+                                size: self.width-10, self.height-10
+                                pos: self.x+5, self.y+5  
+
+                    Label :
+                        id: lp_placeholder_timestamp_1
+                        color: (0,0,0,1)
+                        bold: True
+                        canvas:
+                            Color:
+                                rgba: (0.8, 0.8, 0.8, 0.5)
+                            Rectangle:
+                                size: self.width-10, self.height-10
+                                pos: self.x+5, self.y+5  
+                    Label :
+                        id: lp_owner_label_1
+                        color: (0,0,0,1)
+                        bold: True
+                        canvas:
+                            Color:
+                                rgba: (0.8, 0.8, 0.8, 0.5)
+                            Rectangle:
+                                size: self.width-10, self.height-10
+                                pos: self.x+5, self.y+5
+                    Label :
+                        id: lp_student_label_1
+                        color: (0,0,0,1)
+                        bold: True
+                        canvas:
+                            Color:
+                                rgba: (0.8, 0.8, 0.8, 0.5)
+                            Rectangle:
+                                size: self.width-10, self.height-10
+                                pos: self.x+5, self.y+5
+
+            BoxLayout:
+                orientation: "horizontal"
+                Image :
+                    id: lp_placeholder_img_2
+                    size_hint_x: 0.6                          
+                    allow_stretch: True
+                    keep_ratio: False
+                    canvas:
+                        Color:
+                            rgba: .5, .5, .5, 1
+                        Line:
+                            width: 2
+                            rectangle: self.x, self.y, self.width, self.height                
+
+                BoxLayout:
+                    orientation: "vertical"
+                    size_hint_x: 0.4
+                    canvas:
+                        Color:
+                            rgba: .5, .5, .5, 1
+                        Line:
+                            width: 2
+                            rectangle: self.x, self.y, self.width, self.height
+                    Label :
+                        id: lp_placeholder_label_2
+                        size_hint_y: 0.25
+                        color: (0,0,0,1)
+                        bold: True
+                        canvas:
+                            Color:
+                                rgba: (0.8, 0.8, 0.8, 0.5)
+                            Rectangle:
+                                size: self.width-10, self.height-10
+                                pos: self.x+5, self.y+5     
+                    Label :
+                        id: lp_placeholder_timestamp_2
+                        size_hint_y: 0.25
+                        color: (0,0,0,1)
+                        bold: True
+                        canvas:
+                            Color:
+                                rgba: (0.8, 0.8, 0.8, 0.5)
+                            Rectangle:
+                                size: self.width-10, self.height-10
+                                pos: self.x+5, self.y+5  
+                    Label :
+                        id: lp_owner_label_2
+                        size_hint_y: 0.25
+                        color: (0,0,0,1)
+                        bold: True
+                        canvas:
+                            Color:
+                                rgba: (0.8, 0.8, 0.8, 0.5)
+                            Rectangle:
+                                size: self.width-10, self.height-10
+                                pos: self.x+5, self.y+5
+                    Label :
+                        id: lp_student_label_2
+                        size_hint_y: 0.25
+                        color: (0,0,0,1)
+                        bold: True
+                        canvas:
+                            Color:
+                                rgba: (0.8, 0.8, 0.8, 0.5)
+                            Rectangle:
+                                size: self.width-10, self.height-10
+                                pos: self.x+5, self.y+5
+
+            BoxLayout:
+                orientation: "horizontal"
+                Image :
+                    id: lp_placeholder_img_3
+                    size_hint_x: 0.6                          
+                    allow_stretch: True
+                    keep_ratio: False
+                    canvas:
+                        Color:
+                            rgba: .5, .5, .5, 1
+                        Line:
+                            width: 2
+                            rectangle: self.x, self.y, self.width, self.height
+
+                BoxLayout:
+                    orientation: "vertical"
+                    size_hint_x: 0.4
+                    canvas:
+                        Color:
+                            rgba: .5, .5, .5, 1
+                        Line:
+                            width: 2
+                            rectangle: self.x, self.y, self.width, self.height
+                    Label :
+                        id: lp_placeholder_label_3
+                        size_hint_y: 0.25
+                        color: (0,0,0,1)
+                        bold: True
+                        canvas:
+                            Color:
+                                rgba: (0.8, 0.8, 0.8, 0.5)
+                            Rectangle:
+                                size: self.width-10, self.height-10
+                                pos: self.x+5, self.y+5     
+                    Label :
+                        id: lp_placeholder_timestamp_3
+                        size_hint_y: 0.25
+                        color: (0,0,0,1)
+                        bold: True
+                        canvas:
+                            Color:
+                                rgba: (0.8, 0.8, 0.8, 0.5)
+                            Rectangle:
+                                size: self.width-10, self.height-10
+                                pos: self.x+5, self.y+5  
+                    Label :
+                        id: lp_owner_label_3
+                        size_hint_y: 0.25
+                        color: (0,0,0,1)
+                        bold: True
+                        canvas:
+                            Color:
+                                rgba: (0.8, 0.8, 0.8, 0.5)
+                            Rectangle:
+                                size: self.width-10, self.height-10
+                                pos: self.x+5, self.y+5
+                    Label :
+                        id: lp_student_label_3
+                        size_hint_y: 0.25
+                        color: (0,0,0,1)
+                        bold: True
+                        canvas:
+                            Color:
+                                rgba: (0.8, 0.8, 0.8, 0.5)
+                            Rectangle:
+                                size: self.width-10, self.height-10
+                                pos: self.x+5, self.y+5
+
+            BoxLayout:
+                orientation: "horizontal"
+                Image :
+                    id: lp_placeholder_img_4
+                    size_hint_x: 0.6                          
+                    allow_stretch: True
+                    keep_ratio: False
+                    canvas:
+                        Color:
+                            rgba: .5, .5, .5, 1
+                        Line:
+                            width: 2
+                            rectangle: self.x, self.y, self.width, self.height
+
+                BoxLayout:
+                    orientation: "vertical"
+                    size_hint_x: 0.4
+                    canvas:
+                        Color:
+                            rgba: .5, .5, .5, 1
+                        Line:
+                            width: 2
+                            rectangle: self.x, self.y, self.width, self.height
+                    Label :
+                        id: lp_placeholder_label_4
+                        size_hint_y: 0.25
+                        color: (0,0,0,1)
+                        bold: True
+                        canvas:
+                            Color:
+                                rgba: (0.8, 0.8, 0.8, 0.5)
+                            Rectangle:
+                                size: self.width-10, self.height-10
+                                pos: self.x+5, self.y+5     
+                    Label :
+                        id: lp_placeholder_timestamp_4
+                        size_hint_y: 0.25
+                        color: (0,0,0,1)
+                        bold: True
+                        canvas:
+                            Color:
+                                rgba: (0.8, 0.8, 0.8, 0.5)
+                            Rectangle:
+                                size: self.width-10, self.height-10
+                                pos: self.x+5, self.y+5  
+                    Label :
+                        id: lp_owner_label_4
+                        size_hint_y: 0.25
+                        color: (0,0,0,1)
+                        bold: True
+                        canvas:
+                            Color:
+                                rgba: (0.8, 0.8, 0.8, 0.5)
+                            Rectangle:
+                                size: self.width-10, self.height-10
+                                pos: self.x+5, self.y+5
+                    Label :
+                        id: lp_student_label_4
+                        size_hint_y: 0.25
+                        color: (0,0,0,1)
+                        bold: True
+                        canvas:
+                            Color:
+                                rgba: (0.8, 0.8, 0.8, 0.5)
+                            Rectangle:
+                                size: self.width-10, self.height-10
+                                pos: self.x+5, self.y+5
+
+            BoxLayout:
+                orientation: "horizontal"
+                Image :
+                    id: lp_placeholder_img_5
+                    size_hint_x: 0.6                          
+                    allow_stretch: True
+                    keep_ratio: False
+                    canvas:
+                        Color:
+                            rgba: .5, .5, .5, 1
+                        Line:
+                            width: 2
+                            rectangle: self.x, self.y, self.width, self.height                    
+
+                BoxLayout:
+                    orientation: "vertical"
+                    size_hint_x: 0.4
+                    canvas:
+                        Color:
+                            rgba: .5, .5, .5, 1
+                        Line:
+                            width: 2
+                            rectangle: self.x, self.y, self.width, self.height                    
+                    Label :
+                        id: lp_placeholder_label_5
+                        size_hint_y: 0.25
+                        color: (0,0,0,1)
+                        bold: True
+                        canvas:
+                            Color:
+                                rgba: (0.8, 0.8, 0.8, 0.5)
+                            Rectangle:
+                                size: self.width-10, self.height-10
+                                pos: self.x+5, self.y+5     
+                    Label :
+                        id: lp_placeholder_timestamp_5
+                        size_hint_y: 0.25
+                        color: (0,0,0,1)
+                        bold: True
+                        canvas:
+                            Color:
+                                rgba: (0.8, 0.8, 0.8, 0.5)
+                            Rectangle:
+                                size: self.width-10, self.height-10
+                                pos: self.x+5, self.y+5  
+                    Label :
+                        id: lp_owner_label_5
+                        size_hint_y: 0.25
+                        color: (0,0,0,1)
+                        bold: True
+                        canvas:
+                            Color:
+                                rgba: (0.8, 0.8, 0.8, 0.5)
+                            Rectangle:
+                                size: self.width-10, self.height-10
+                                pos: self.x+5, self.y+5
+                    Label :
+                        id: lp_student_label_5
+                        size_hint_y: 0.25
+                        color: (0,0,0,1)
+                        bold: True
+                        canvas:
+                            Color:
+                                rgba: (0.8, 0.8, 0.8, 0.5)
+                            Rectangle:
+                                size: self.width-10, self.height-10
+                                pos: self.x+5, self.y+5
