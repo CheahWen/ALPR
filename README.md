@@ -2,6 +2,16 @@
 
 ---
 
+## Special thanks for the following Github repo
+### Source code references:
+> LP Detection: https://github.com/CheahWen/ConvALPR
+
+> OCR: https://github.com/sergiomsilva/alpr-unconstrained
+
+> Previously I use this: https://github.com/wechao18/Efficient-alpr-unconstrained, too slow and abandoned already.
+
+---
+
 ## Step of installation:
 1. Make sure Anaconda or Pip is installed
 2. Create venv, choose yours:
@@ -31,6 +41,7 @@
    - Pip: simple type "deactivate"
    - Anaconda: simple type "conda deactivate"
      ![Conda deactivate](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/deactivate_conda_env.PNG)
+     
 #### Mobile Camera as Input Source 
 > IP Webcam Download: https://play.google.com/store/apps/details?id=com.pas.webcam&hl=en&gl=US
 
@@ -40,7 +51,41 @@
 ## Step of making packaged exe file:
 1. In the terminal, run "python compile.py"
 2. Move to "**dist**" folder, you will see an exe file.
-3. If the **icons** and **models** folder, **config.cfg** and **layout.kv** do not exist in "**dist**" folder, add that 2 folders and 2 stuff into it.
+3. If the **icons** and **models** folder, **config.cfg** and **layout.kv** do not exist in "**dist**" folder, copy that 2 folders and 2 stuff from your main folder into it.
+4. Run the exe file, you are good to go.
+
+---
+
+# Want theory? It is pretty boring.
+
+> Originally, I refer to the this paper: https://openaccess.thecvf.com/content_ECCV_2018/papers/Sergio_Silva_License_Plate_Detection_ECCV_2018_paper.pdf
+
+> Then I also found OCR paper in the above paper: https://www.researchgate.net/publication/320677458_Real-Time_Brazilian_License_Plate_Detection_and_Recognition_Using_Deep_Convolutional_Neural_Networks
+
+> You can see how they implement their model (affine transform, data augmentation, YOLO stuff).
+
+> FYI, You Only Look Once (YOLO), a pretrained model using CNN, now got v5 implemented using Pytorch: https://github.com/ultralytics/yolov5.
+
+> But, I only take their OCR model, abandoned car detection and replace lp detection model from this repo: https://github.com/CheahWen/ConvALPR.
+
+
+---
+
+# Want to deploy on Atlas 200 DK?
+
+> Atlas only take TF or caffe model to convert to OM format which is the only compatible model for Ascend chip.
+
+> If want to deploy on Atlas 200 DK, change Darknet weight file to **frozen** TF .pb model.
+
+> "saved_model.pb" is not the right model to convert, their ckpt are separated.
+
+> If the TF graph is not **frozen**, you will get error of model conversion in Mind Studio. 
+
+> All TF model need to be frozen, I don't know how: https://stackoverflow.com/questions/58119155/freezing-graph-to-pb-in-tensorflow2
+
+> View your model architecture in Netron to check input layer name: https://netron.app/
+
+> I actually have tried to convert frozen model to OM before, but get memory issue on Mind Studio.
 
 ---
 
