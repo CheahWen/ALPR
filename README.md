@@ -25,6 +25,12 @@
 
 4. Run "python main.py".
 
+![Conda run script](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/run_script.PNG)
+
+5. If finished, just deactivate env.
+   - Pip: simple type "deactivate"
+   - Anaconda: simple type "conda deactivate"
+     ![Conda deactivate](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/deactivate_conda_env.PNG)
 #### Mobile Camera as Input Source 
 > IP Webcam Download: https://play.google.com/store/apps/details?id=com.pas.webcam&hl=en&gl=US
 
