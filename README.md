@@ -25,6 +25,10 @@
     
 ## Step of running app:
 1. Open WAMP/XAMPP/etc, open Apache server and MySQL.
+
+> As for me, I used XAMPP: 
+  ![MySQL Start](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/mysql_start.PNG)
+
 2. Specify source of input in "config.cfg", source can be webcam, video file, image file, IP cam (rstp://) or Mobile IP Webcam (https://).
 
 ![cfg](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/cfg.PNG)
@@ -47,17 +51,23 @@
 
 > Random Youtube video (How to use IP Webcam): https://youtu.be/2xcUzXataIk
 
+> If failed to connect to PC, try to use your mobile **HOTSPOT**.
+
+> IP Webcam (Interface):
+  ![IP_Wencam_Interface](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/ip_webcam_1.PNG)
+
+> IP Webcam (Full Video):
+  ![IP_Wencam_Video](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/ip_webcam_2.PNG)
+
+> IP Webcam (Interact with GUI):
+  ![IP_Wencam_GUI](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/ip_webcam_3.PNG)
+
 
 ## Step of making packaged exe file:
 1. In the terminal, run "python compile.py"
 2. Move to "**dist**" folder, you will see an exe file.
 3. If the **icons** and **models** folder, **config.cfg** and **layout.kv** do not exist in "**dist**" folder, copy that 2 folders and 2 stuff from your main folder into it.
 4. Run the exe file, you are good to go.
-
----
-
-Understanding CNN through Visualization: https://www.cs.ryerson.ca/~aharley/vis/conv/
-Recommed course (beginner): https://www.cs.ryerson.ca/~aharley/vis/conv/
 
 ---
 
@@ -79,7 +89,9 @@ Here is some CNN stuff,
 
 > Visualize CNN on predicting handwritten digit: https://www.cs.ryerson.ca/~aharley/vis/conv/
 
-> Recommed course (beginner): https://www.cs.ryerson.ca/~aharley/vis/conv/
+![Handwritten CNN digit](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/handwritten_demo.PNG)
+
+> Recommed Sung Kim course (for absolute beginner): https://www.bilibili.com/video/av71398626/
 
 ---
 
