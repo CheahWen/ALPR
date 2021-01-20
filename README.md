@@ -12,7 +12,9 @@
 
 ---
 
-## Step of installation:
+# Getting Started
+
+## A) Step of installation:
 1. Make sure Anaconda or Pip is installed
 2. Create venv, choose yours:
     - Anaconda: conda create -n alpr python=3.7
@@ -23,7 +25,7 @@
 4. Then, install all dependency in requirements.txt.
     - Anaconda & Pip: type "pip install -r requirements.txt", this will work for Anaconda too because it will sync packages installed           from Pip
     
-## Step of running app:
+## B) Step of running app:
 1. Open WAMP/XAMPP/etc, open Apache server and MySQL.
 
 > As for me, I used XAMPP: 
@@ -51,19 +53,21 @@
 
 > Random Youtube video (How to use IP Webcam): https://youtu.be/2xcUzXataIk
 
-> If failed to connect to PC, try to use your mobile **HOTSPOT**.
+> If failed to connect to PC, try to use your **mobile HOTSPOT**.
 
-> IP Webcam (Interface):
-  ![IP_Wencam_Interface](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/ip_webcam_1.PNG)
+> For me, I used my own mobile hotspot, then enter given IP Address: https://192.168.43.1:8080.
 
-> IP Webcam (Full Video):
-  ![IP_Wencam_Video](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/ip_webcam_2.PNG)
+> IP Webcam (Interface) [https://192.168.43.1:8080]:
+  ![IP_Webcam_Interface](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/ip_webcam_1.PNG)
 
-> IP Webcam (Interact with GUI):
-  ![IP_Wencam_GUI](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/ip_webcam_3.PNG)
+> IP Webcam (Full Video) [https://192.168.43.1:8080/video]:
+  ![IP_Webcam_Video](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/ip_webcam_2.PNG)
+
+> IP Webcam (Interact with GUI) [https://192.168.43.1:8080]:
+  ![IP_Webcam_GUI](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/ip_webcam_3.PNG)
 
 
-## Step of making packaged exe file:
+## C) Step of making packaged exe file:
 1. In the terminal, run "python compile.py"
 2. Move to "**dist**" folder, you will see an exe file.
 3. If the **icons** and **models** folder, **config.cfg** and **layout.kv** do not exist in "**dist**" folder, copy that 2 folders and 2 stuff from your main folder into it.
