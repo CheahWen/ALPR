@@ -16,10 +16,13 @@
 ## Step of running app:
 1. Open WAMP/XAMPP/etc, open Apache server and MySQL.
 2. Specify source of input in "config.cfg", source can be webcam, video file, image file, IP cam (rstp://) or Mobile IP Webcam (https://).
+
 ![cfg](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/cfg.PNG)
 
 3. Activate venv.
+
 ![Conda Activate Env](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/activate_conda_env.PNG)
+
 4. Run "python main.py".
 
 #### Mobile Camera as Input Source 
