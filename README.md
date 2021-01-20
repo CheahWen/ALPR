@@ -30,6 +30,7 @@
 
 > As for me, I used XAMPP: 
   ![MySQL Start](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/mysql_start.PNG)
+  > Could not start MySQL? Go to `Task Manager>services`, search MySQL and stop it, then start again in XAMPP.
 
 2. Specify source of input in "config.cfg", source can be webcam, video file, image file, IP cam (rstp://) or Mobile IP Webcam (https://).
 
