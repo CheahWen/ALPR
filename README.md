@@ -19,8 +19,9 @@
 3. In the terminal, run "python main.py".
 
 ### Mobile Camera as Input Source 
-**IP Webcam**: https://play.google.com/store/apps/details?id=com.pas.webcam&hl=en&gl=US
-**IP Webcam (How to use)**: https://youtu.be/2xcUzXataIk
+> IP Webcam Download: https://play.google.com/store/apps/details?id=com.pas.webcam&hl=en&gl=US
+
+> Random Youtube video (How to use IP Webcam): https://youtu.be/2xcUzXataIk
 
 
 ## Step of making packaged exe file:
