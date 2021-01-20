@@ -56,6 +56,11 @@
 
 ---
 
+Understanding CNN through Visualization: https://www.cs.ryerson.ca/~aharley/vis/conv/
+Recommed course (beginner): https://www.cs.ryerson.ca/~aharley/vis/conv/
+
+---
+
 # Want theory? It is pretty boring.
 
 > Originally, I refer to the this paper: https://openaccess.thecvf.com/content_ECCV_2018/papers/Sergio_Silva_License_Plate_Detection_ECCV_2018_paper.pdf
@@ -68,6 +73,13 @@
 
 > But, I only take their OCR model, abandoned car detection and replace lp detection model from this repo: https://github.com/CheahWen/ConvALPR.
 
+## CNN Stuff
+
+Here is some CNN stuff,
+
+> Visualize CNN on predicting handwritten digit: https://www.cs.ryerson.ca/~aharley/vis/conv/
+
+> Recommed course (beginner): https://www.cs.ryerson.ca/~aharley/vis/conv/
 
 ---
 
@@ -77,13 +89,25 @@
 
 > If want to deploy on Atlas 200 DK, change Darknet weight file to **frozen** TF .pb model.
 
+
+## TF To Ascend OM (LP Model)
 > "saved_model.pb" is not the right model to convert, their ckpt are separated.
 
-> If the TF graph is not **frozen**, you will get error of model conversion in Mind Studio. 
+> If the TF graph is not **frozen**, you will get error of model conversion in Mind Studio.
+  ![not_frozen_model](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/tf_model_not_frozen.png)
 
 > All TF model need to be frozen, I don't know how: https://stackoverflow.com/questions/58119155/freezing-graph-to-pb-in-tensorflow2
 
 > View your model architecture in Netron to check input layer name: https://netron.app/
+
+## Darknet To TF, TF To Ascend OM (OCR Model)
+
+> OCR model is a Darknet model.
+  ![OCR_Darknet](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/ocr_darknet.png)
+
+> I not tried before, refer this: https://prashantdandriyal.medium.com/darknet-to-tensorflow-to-tensorflowlite-b783d55b106a
+
+> Then, make sure it is a frozen model, not a saved model pb.
 
 > I actually have tried to convert frozen model to OM before, but get memory issue on Mind Studio.
 
@@ -121,7 +145,6 @@
 ---
 
 ##### End of Documentation...
-
 
 
 
