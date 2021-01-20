@@ -464,3 +464,25 @@
                             Rectangle:
                                 size: self.width-10, self.height-10
                                 pos: self.x+5, self.y+5
+    
+
+<PopupMessage>:
+    error_msg_label: error_msg_label
+    id:pop
+    size_hint: .5, .3
+    auto_dismiss: True
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        Label:
+            id: error_msg_label
+            size_hint_y: .8
+            text_size: self.width, None
+            height: self.texture_size[1]
+            bold: True
+        Button:
+            text: 'Close'
+            size_hint_x: 0.2
+            size_hint_y: 0.2
+            pos_hint: {'x': .8, 'y': .8}
+            on_press: pop.dismiss()

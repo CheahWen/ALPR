@@ -39,6 +39,7 @@ Builder.load_file('layout.kv')
 
 class ALPRApp(App):
     gui=GUI()
+    myClock=Clock
     def build(self):
         self.title = app_title
         Clock.schedule_interval(self.gui.update, 1.0/4.0)

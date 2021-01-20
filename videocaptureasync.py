@@ -39,7 +39,7 @@ class VideoCaptureAsync:
                 grabbed = self.grabbed
             return grabbed, frame
         except:
-            return False, False
+            return False, []
 
     def stop(self):
         time.sleep(2)

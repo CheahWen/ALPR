@@ -4,3 +4,6 @@ opencv_python==4.1.1.26
 PyYAML==5.3.1
 tensorflow==2.3.0
 PyInstaller
+kivy
+kivy-deps.glew
+kivy-deps.sdl2

@@ -30,18 +30,23 @@ class DB:
         self.loop = asyncio.get_event_loop()
             
     async def createPool(self):
-        self.pool = await aiomysql.create_pool(
-            autocommit=True,
-            host=self.server,
-            port=self.port,
-            user=self.user,
-            password=self.password,
-            db=self.db,
-            loop=self.loop,
-        )
+        try:
+            self.pool = await aiomysql.create_pool(
+                autocommit=True,
+                host=self.server,
+                port=self.port,
+                user=self.user,
+                password=self.password,
+                db=self.db,
+                loop=self.loop,
+            )
+        except Exception as e:
+            raise Exception (e)
     @asyncio.coroutine
     async def selectOne(self, sql):
         try:
+            if not hasattr(self, 'pool'):
+                await self.createPool() 
             async with self.pool.acquire() as conn:
                 async with conn.cursor() as cur:
                     await cur.execute(sql)
@@ -50,10 +55,14 @@ class DB:
         except aiomysql.MySQLError as e:
             LogManager.makeLog(message='Got error {!r}, errno is {}'.format(e, e.args[0]), type=1)
             LogManager.makeLog(message=f'{traceback.format_exc()}', type=1)
+            raise Exception (e)
 
     async def selectAll(self, sql):
         
         try:
+            
+            if not hasattr(self, 'pool'):
+                await self.createPool()
             async with self.pool.acquire() as conn:
                 async with conn.cursor() as cur:
                     await cur.execute(sql)
@@ -62,9 +71,13 @@ class DB:
         except aiomysql.MySQLError as e:
             LogManager.makeLog(message='Got error {!r}, errno is {}'.format(e, e.args[0]), type=1)
             LogManager.makeLog(message=f'{traceback.format_exc()}', type=1)
+            raise Exception (e)
 
     async def insertOne(self, sql):
         try:
+            
+            if not hasattr(self, 'pool'):
+                await self.createPool()
             async with self.pool.acquire() as conn:
                 async with conn.cursor() as cur:
                     await cur.execute(sql)
@@ -72,19 +85,7 @@ class DB:
         except aiomysql.MySQLError as e:
             LogManager.makeLog(message='Got error {!r}, errno is {}'.format(e, e.args[0]), type=1)
             LogManager.makeLog(message=f'{traceback.format_exc()}', type=1)
-
-    
-    async def makeTrx(self, sql):
-        
-        try:
-            async with self.pool.acquire() as conn:
-                async with conn.cursor() as cur:
-                    r = await cur.execute(sql)
-                
-
-        except aiomysql.MySQLError as e:
-            LogManager.makeLog(message='Got error {!r}, errno is {}'.format(e, e.args[0]), type=1)
-            LogManager.makeLog(message=f'{traceback.format_exc()}', type=1)
+            raise Exception (e)
     
     def close_pool(self):
         self.pool.close()
