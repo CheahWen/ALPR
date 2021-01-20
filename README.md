@@ -52,7 +52,7 @@
             
         > It is very tedious to install, previously I choose recommended installation and wasted so much time to figure out and uncheck those stuff.
 
-9. Make sure add in your path like this:
+9. Make sure add in your path like this (I think CUDA will ask you whether adding them in path for you after success installation):
    ![CUDA_PATH](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/cuda_path.png)
 10. If you want to setup in Linux Virtualbox, GPU cannot be shared, PCI Passthrough has security risk. Hence it is less possible to get access the NVIDIA GPU.
 
