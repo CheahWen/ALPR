@@ -16,12 +16,15 @@
 
 ## A) Setup NVIDIA GPU (Optional):
 1. Refer Tensorflow GPU setup guide: https://www.tensorflow.org/install/gpu
+   ![TF_GPU](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/tf_gpu.PNG)
 2. Make sure Nvidia Driver, CUDA, CUPTI, CUDNN has been downloaded and installed.
 3. Open terminal, type "nvidia-smi" to check NVIDIA Driver have been installed.
 4. If failed, installation guide of NVIDIA driver in https://helpx.adobe.com/x-productkb/multi/drivers-video-win-nvidia.html
 5. Check your environment variables that path of CUDA, CUPTI and CUDNN are added.
-6. Open terminal, type "nvcc" to check CUDA has been installed.
+6. Open terminal, type "nvcc --version" to check CUDA has been installed.
+
 7. If not installed CUDA and CUDNN, Refer TF version and CUDA version compatibility table in https://www.tensorflow.org/install/source#gpu to install.
+   ![TF_CUDA_Compat](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/tf_cuda.png)
 8. - CUDA Download: https://developer.nvidia.com/cuda-toolkit-archive
    - CUDNN Download: https://developer.nvidia.com/rdp/cudnn-archive
 
@@ -44,7 +47,7 @@
             > - Other Component
 
 9. Make sure add in your path like this:
-
+   ![CUDA_PATH](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/cuda_path.png)
 10. If you want to setup in Linux Virtualbox, GPU cannot be shared, PCI Passthrough has security risk. Hence it is less possible to get access the NVIDIA GPU.
 
 ## B) Step of installation:
