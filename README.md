@@ -100,6 +100,8 @@ Here is some CNN stuff,
 
 > View your model architecture in Netron to check input layer name: https://netron.app/
 
+> I actually have tried to convert frozen model to OM before, but get memory issue on Mind Studio.
+
 ## Darknet To TF, TF To Ascend OM (OCR Model)
 
 > OCR model is a Darknet model.
@@ -108,8 +110,6 @@ Here is some CNN stuff,
 > I not tried before, refer this: https://prashantdandriyal.medium.com/darknet-to-tensorflow-to-tensorflowlite-b783d55b106a
 
 > Then, make sure it is a frozen model, not a saved model pb.
-
-> I actually have tried to convert frozen model to OM before, but get memory issue on Mind Studio.
 
 ---
 
