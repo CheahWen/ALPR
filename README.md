@@ -18,7 +18,7 @@
 2. Specify source of input in "config.cfg", source can be webcam, video file, image file, IP cam (rstp://) or Mobile IP Webcam (https://).
 3. In the terminal, run "python main.py".
 
-### Mobile Camera as Input Source 
+#### Mobile Camera as Input Source 
 > IP Webcam Download: https://play.google.com/store/apps/details?id=com.pas.webcam&hl=en&gl=US
 
 > Random Youtube video (How to use IP Webcam): https://youtu.be/2xcUzXataIk
@@ -62,7 +62,7 @@
 
 ---
 
-### End of Documentation.
+##### End of Documentation...
 
 
 
