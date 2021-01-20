@@ -32,12 +32,14 @@
 
 # Get some idea of Kivy
 > Kivy docs: https://kivy.org/
+
 > Random Youtube video to get started: https://youtu.be/bMHK6NDVlCM
 
 ---
 
 # Get some idea of PyInstaller
 > Packaging Kivy App: https://kivy.org/doc/stable/guide/packaging-windows.html
+
 > Stack Overflow: https://stackoverflow.com/questions/37696206/how-to-get-an-windows-executable-from-my-kivy-app-pyinstaller
 
 ---
