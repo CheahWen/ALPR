@@ -14,8 +14,42 @@
 
 # Getting Started
 
-## A) Step of installation:
+## A) Setup NVIDIA GPU (Optional):
+1. Refer Tensorflow GPU setup guide: https://www.tensorflow.org/install/gpu
+2. Make sure Nvidia Driver, CUDA, CUPTI, CUDNN has been downloaded and installed.
+3. Open terminal, type "nvidia-smi" to check NVIDIA Driver have been installed.
+4. If failed, installation guide of NVIDIA driver in https://helpx.adobe.com/x-productkb/multi/drivers-video-win-nvidia.html
+5. Check your environment variables that path of CUDA, CUPTI and CUDNN are added.
+6. Open terminal, type "nvcc" to check CUDA has been installed.
+7. If not installed CUDA and CUDNN, Refer TF version and CUDA version compatibility table in https://www.tensorflow.org/install/source#gpu to install.
+8. - CUDA Download: https://developer.nvidia.com/cuda-toolkit-archive
+   - CUDNN Download: https://developer.nvidia.com/rdp/cudnn-archive
+
+     > Case if install fail:
+     
+        > Choose custom installation
+
+        > Then, unselect:
+
+            > - Visual Studio Integration
+
+            > - Visual Profiler
+
+            > - Nsight System
+
+            > - Nsight Compute
+
+            > - Display Component
+
+            > - Other Component
+
+9. Make sure add in your path like this:
+
+10. If you want to setup in Linux Virtualbox, GPU cannot be shared, PCI Passthrough has security risk. Hence it is less possible to get access the NVIDIA GPU.
+
+## B) Step of installation:
 1. Make sure Anaconda or Pip is installed
+   - Anaconda: https://www.anaconda.com/products/individual
 2. Create venv, choose yours:
     - Anaconda: conda create -n alpr python=3.7
     - Pip: virtualenv venv
@@ -25,7 +59,7 @@
 4. Then, install all dependency in requirements.txt.
     - Anaconda & Pip: type "pip install -r requirements.txt", this will work for Anaconda too because it will sync packages installed           from Pip
     
-## B) Step of running app:
+## C) Step of running app:
 1. Open WAMP/XAMPP/etc, open Apache server and MySQL.
 
 > As for me, I used XAMPP: 
@@ -68,7 +102,7 @@
   ![IP_Webcam_GUI](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/ip_webcam_3.PNG)
 
 
-## C) Step of making packaged exe file:
+## D) Step of making packaged exe file:
 1. In the terminal, run "python compile.py"
 2. Move to "**dist**" folder, you will see an exe file.
 3. If the **icons** and **models** folder, **config.cfg** and **layout.kv** do not exist in "**dist**" folder, copy that 2 folders and 2 stuff from your main folder into it.
@@ -145,15 +179,16 @@ Here is some CNN stuff,
 ---
 
 # Files
-## Script (Only 8 scripts)
+## Script (Only 9 scripts)
 1. ConfigParserManager.py: Read config file and pass the parsed data to respective script.
 2. LogManager.py: Record any log.
 3. CSVManager.py: Record csv file.
-4. db.py: Manage database CRUD.
-5. lp_det.py: Manage license plate detection stuff.
-6. ocr_op.py: Manage any operation of OCR.
-7. gui.py: Contain instance of DB object, PlateDetector object, OCR object. Updating UI based on data flow, control all event of GUI.
-8. main.py: The starting point of the app. Contain ALPR class object inherit from Kivy App object, update the gui based on clock with fps 60 (```Clock.schedule_interval(self.gui.update, 1.0/60.0)```).
+4. videocaptureasync: Handle asynchronous video frame capturing.
+5. db.py: Manage database CRUD.
+6. lp_det.py: Manage license plate detection stuff.
+7. ocr_op.py: Manage any operation of OCR.
+8. gui.py: Contain instance of DB object, PlateDetector object, OCR object. Updating UI based on data flow, control all event of GUI.
+9. main.py: The starting point of the app. Contain ALPR class object inherit from Kivy App object, update the gui based on clock with fps 60 (```Clock.schedule_interval(self.gui.update, 1.0/60.0)```).
 
 ## Others
 1. layout.kv: Declare the Kivy layout for the app.
