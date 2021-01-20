@@ -28,9 +28,12 @@
    ![TF_CUDA_Compat](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/tf_cuda.png)
 8. - CUDA Download: https://developer.nvidia.com/cuda-toolkit-archive
    - CUDNN Download: https://developer.nvidia.com/rdp/cudnn-archive
+   - CUPTI already inside CUDA Package, just make sure to check it if you choose CUDA custom installation.
 
      > Case if CUDA install fail:
      
+        > Refer: https://forums.developer.nvidia.com/t/windows-10-cuda-installation-failure-solved/64389/3
+        
         > Choose custom installation
 
         > Then, unselect:
@@ -47,7 +50,7 @@
 
             > - Other Component
             
-        > It is very tedious to install, if still failed, refer https://forums.developer.nvidia.com/t/windows-10-cuda-installation-failure-solved/64389/3
+        > It is very tedious to install, previously I choose recommended installation and wasted so much time to figure out and uncheck those stuff.
 
 9. Make sure add in your path like this:
    ![CUDA_PATH](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/cuda_path.png)
