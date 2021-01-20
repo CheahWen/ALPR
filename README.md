@@ -11,7 +11,7 @@
     - Anaconda: conda activate alpr
     - Pip: [Linux cmd]: "source venv/bin/activate", [Window cmd]: ".\venv\Scripts\activate"
 4. Then, install all dependency in requirements.txt.
-    - Anaconda & Pip: "pip install -r requirements.txt"
+    - Anaconda & Pip: type "pip install -r requirements.txt", this will work for Anaconda too because it will sync packages installed           from Pip
     
 ## Step of running app:
 1. Open WAMP/XAMPP/etc, open Apache server and MySQL.
