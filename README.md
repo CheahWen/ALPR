@@ -131,7 +131,7 @@
 
 > But, I only take their OCR model, abandoned car detection and replace lp detection model from this repo: https://github.com/CheahWen/ConvALPR.
    
-   > **LP Detection Model: Tiny YOLOv4 Architecture (22 MB) **
+   > **LP Detection Model: Tiny YOLOv4 Architecture (22 MB)**
 
    > **OCR Model: self-made YOLO (14 Conv Layers) Architecture (17 MB)**
 
