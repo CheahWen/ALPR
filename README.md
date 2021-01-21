@@ -117,7 +117,7 @@
 2. Move to "**dist**" folder, you will see an exe file.
 3. If the **icons** and **models** folder, **config.cfg** and **layout.kv** do not exist in "**dist**" folder, copy that 2 folders and 2 stuff from your main folder into it.
 4. Run the exe file, you are good to go.
-5. Example folder:
+5. Example "**dist**" folder (or you can copy paste these necessary stuff to other place):
    ![Example_folder](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/Package_App.PNG)
 ---
 
