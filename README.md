@@ -64,6 +64,8 @@
     - Pip: virtualenv venv
 3. Activate venv, choose yours:
     - Anaconda: conda activate alpr
+      e.g: ![Conda Activate Env](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/activate_conda_env.PNG)
+
     - Pip: [Linux cmd]: "source venv/bin/activate", [Window cmd]: ".\venv\Scripts\activate"
 4. Then, install all dependency in requirements.txt.
     - Anaconda & Pip: type "pip install -r requirements.txt", this will work for Anaconda too because it will sync packages installed           from Pip
@@ -116,7 +118,8 @@
 2. Move to "**dist**" folder, you will see an exe file.
 3. If the **icons** and **models** folder, **config.cfg** and **layout.kv** do not exist in "**dist**" folder, copy that 2 folders and 2 stuff from your main folder into it.
 4. Run the exe file, you are good to go.
-
+5. Example folder:
+   ![Example_folder](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/Package_App.PNG)
 ---
 
 # Theory
