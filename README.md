@@ -60,12 +60,12 @@
 1. Make sure Anaconda or Pip is installed
    - Anaconda: https://www.anaconda.com/products/individual
 2. Create venv, choose yours:
-    - Anaconda: conda create -n alpr python=3.7
-    - Pip: virtualenv venv
+    - Anaconda: conda create -n YOUR_VENV_NAME python=3.7
+    - Pip: virtualenv YOUR_VENV_NAME
 3. Activate venv, choose yours:
-    - Anaconda: conda activate alpr
+    - Anaconda: conda activate YOUR_VENV_NAME
     - ![Conda Activate Env](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/activate_conda_env.PNG)
-    - Pip: [Linux cmd]: "source venv/bin/activate", [Window cmd]: ".\venv\Scripts\activate"
+    - Pip: [Linux cmd]: "source YOUR_VENV_NAME/bin/activate", [Window cmd]: ".\YOUR_VENV_NAME\Scripts\activate"
 4. Then, install all dependency in requirements.txt.
     - Anaconda & Pip: type "pip install -r requirements.txt", this will work for Anaconda too because it will sync packages installed           from Pip
     
@@ -80,7 +80,7 @@
 
 ![cfg](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/cfg.PNG)
 
-3. Activate venv.
+3. Activate YOUR_VENV.
 
 ![Conda Activate Env](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/activate_conda_env.PNG)
 
