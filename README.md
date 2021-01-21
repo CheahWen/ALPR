@@ -131,9 +131,9 @@
 
 > But, I only take their OCR model, abandoned car detection and replace lp detection model from this repo: https://github.com/CheahWen/ConvALPR.
    
-   > **LP Detection Model: Tiny YOLOv4 Architecture (22 MB)**
+   > - **LP Detection Model: Tiny YOLOv4 Architecture (22 MB)**
 
-   > **OCR Model: self-made YOLO (14 Conv Layers) Architecture (17 MB)**
+   > - **OCR Model: self-made YOLO (14 Conv Layers) Architecture (17 MB)**
 
 > Model size need to be very small to fight with the speed of processing. The larger model size (>100 MB) usually deploy on the server machine for most company.
 
@@ -149,11 +149,13 @@ Here is some CNN stuff,
 
 ---
 
-# Want to deploy on Atlas 200 DK?
+# In case want to deploy on Atlas 200 DK
 
 > Atlas only take TF or caffe model to convert to OM format which is the only compatible model for Ascend chip.
 
 > If want to deploy on Atlas 200 DK, change Darknet weight file to **frozen** TF .pb model.
+
+> I actually have tried to convert frozen model to OM before, but get memory issue on Mind Studio. (I still don't understand how to configure AIPP, what is the right way to parse data, how to process the result in the right way. Every architecture and ML framework has their own way on processing data, no sure if I did something wrong).
 
 
 ## TF To Ascend OM (LP Model)
@@ -166,7 +168,6 @@ Here is some CNN stuff,
 
 > View your model architecture in Netron to check input layer name: https://netron.app/
 
-> I actually have tried to convert frozen model to OM before, but get memory issue on Mind Studio.
 
 ## Darknet To TF, TF To Ascend OM (OCR Model)
 
