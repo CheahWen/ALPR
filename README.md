@@ -19,17 +19,21 @@
    ![TF_GPU](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/tf_gpu.PNG)
 2. Make sure Nvidia Driver, CUDA, CUPTI, CUDNN has been downloaded and installed.
 3. Open terminal, type "nvidia-smi" to check NVIDIA Driver have been installed.
+   ![nvidia-smi](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/nvidia-smi.PNG)
 4. If failed, installation guide of NVIDIA driver in https://helpx.adobe.com/x-productkb/multi/drivers-video-win-nvidia.html
 5. Check your environment variables that path of CUDA, CUPTI and CUDNN are added.
 6. Open terminal, type "nvcc --version" to check CUDA has been installed.
-
+   ![nvcc](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/nvcc.PNG)
 7. If not installed CUDA and CUDNN, Refer TF version and CUDA version compatibility table in https://www.tensorflow.org/install/source#gpu to install.
    ![TF_CUDA_Compat](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/tf_cuda.png)
 8. - CUDA Download: https://developer.nvidia.com/cuda-toolkit-archive
    - CUDNN Download: https://developer.nvidia.com/rdp/cudnn-archive
+   - CUPTI already inside CUDA Package, just make sure to check it if you choose CUDA custom installation.
 
-     > Case if install fail:
+     > Case if CUDA install fail:
      
+        > Refer: https://forums.developer.nvidia.com/t/windows-10-cuda-installation-failure-solved/64389/3
+        
         > Choose custom installation
 
         > Then, unselect:
@@ -45,8 +49,10 @@
             > - Display Component
 
             > - Other Component
+            
+        > It is very tedious to install, previously I choose recommended installation and wasted so much time to figure out and uncheck those stuff.
 
-9. Make sure add in your path like this:
+9. Make sure add in your path like this (I think CUDA will ask you whether adding them in path for you after success installation):
    ![CUDA_PATH](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/cuda_path.png)
 10. If you want to setup in Linux Virtualbox, GPU cannot be shared, PCI Passthrough has security risk. Hence it is less possible to get access the NVIDIA GPU.
 
@@ -113,7 +119,7 @@
 
 ---
 
-# Want theory? It is pretty boring.
+# Theory
 
 > Originally, I refer to the this paper: https://openaccess.thecvf.com/content_ECCV_2018/papers/Sergio_Silva_License_Plate_Detection_ECCV_2018_paper.pdf
 
@@ -124,6 +130,12 @@
 > FYI, You Only Look Once (YOLO), a pretrained model using CNN, now got v5 implemented using Pytorch: https://github.com/ultralytics/yolov5.
 
 > But, I only take their OCR model, abandoned car detection and replace lp detection model from this repo: https://github.com/CheahWen/ConvALPR.
+   
+   > - **LP Detection Model: Tiny YOLOv4 Architecture (22 MB)**
+
+   > - **OCR Model: self-made YOLO (14 Conv Layers) Architecture (17 MB)**
+
+> Model size need to be very small to fight with the speed of processing. The larger model size (>100 MB) usually deploy on the server machine for most company.
 
 ## CNN Stuff
 
@@ -137,11 +149,13 @@ Here is some CNN stuff,
 
 ---
 
-# Want to deploy on Atlas 200 DK?
+# In case want to deploy on Atlas 200 DK
 
 > Atlas only take TF or caffe model to convert to OM format which is the only compatible model for Ascend chip.
 
 > If want to deploy on Atlas 200 DK, change Darknet weight file to **frozen** TF .pb model.
+
+> I actually have tried to convert frozen model to OM before, but get memory issue on Mind Studio. (I still don't understand how to configure AIPP, what is the right way to parse data, how to process the result in the right way. Every architecture and ML framework has their own way on processing data, no sure if I did something wrong).
 
 
 ## TF To Ascend OM (LP Model)
@@ -154,7 +168,6 @@ Here is some CNN stuff,
 
 > View your model architecture in Netron to check input layer name: https://netron.app/
 
-> I actually have tried to convert frozen model to OM before, but get memory issue on Mind Studio.
 
 ## Darknet To TF, TF To Ascend OM (OCR Model)
 
