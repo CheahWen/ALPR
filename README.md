@@ -119,7 +119,7 @@
 
 ---
 
-# Want theory? It is pretty boring.
+# Theory
 
 > Originally, I refer to the this paper: https://openaccess.thecvf.com/content_ECCV_2018/papers/Sergio_Silva_License_Plate_Detection_ECCV_2018_paper.pdf
 
@@ -130,6 +130,12 @@
 > FYI, You Only Look Once (YOLO), a pretrained model using CNN, now got v5 implemented using Pytorch: https://github.com/ultralytics/yolov5.
 
 > But, I only take their OCR model, abandoned car detection and replace lp detection model from this repo: https://github.com/CheahWen/ConvALPR.
+   
+   > **LP Detection Model: Tiny YOLOv4 Architecture (22 MB) **
+
+   > **OCR Model: self-made YOLO (14 Conv Layers) Architecture (17 MB)**
+
+> Model size need to be very small to fight with the speed of processing. The larger model size (>100 MB) usually deploy on the server machine for most company.
 
 ## CNN Stuff
 
