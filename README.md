@@ -60,11 +60,12 @@
 1. Make sure Anaconda or Pip is installed
    - Anaconda: https://www.anaconda.com/products/individual
 2. Create venv, choose yours:
-    - Anaconda: conda create -n alpr python=3.7
-    - Pip: virtualenv venv
+    - Anaconda: conda create -n YOUR_VENV_NAME python=3.7
+    - Pip: virtualenv YOUR_VENV_NAME
 3. Activate venv, choose yours:
-    - Anaconda: conda activate alpr
-    - Pip: [Linux cmd]: "source venv/bin/activate", [Window cmd]: ".\venv\Scripts\activate"
+    - Anaconda: conda activate YOUR_VENV_NAME
+    - ![Conda Activate Env](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/activate_conda_env.PNG)
+    - Pip: [Linux cmd]: "source YOUR_VENV_NAME/bin/activate", [Window cmd]: ".\YOUR_VENV_NAME\Scripts\activate"
 4. Then, install all dependency in requirements.txt.
     - Anaconda & Pip: type "pip install -r requirements.txt", this will work for Anaconda too because it will sync packages installed           from Pip
     
@@ -79,7 +80,7 @@
 
 ![cfg](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/cfg.PNG)
 
-3. Activate venv.
+3. Activate YOUR_VENV.
 
 ![Conda Activate Env](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/activate_conda_env.PNG)
 
@@ -116,7 +117,8 @@
 2. Move to "**dist**" folder, you will see an exe file.
 3. If the **icons** and **models** folder, **config.cfg** and **layout.kv** do not exist in "**dist**" folder, copy that 2 folders and 2 stuff from your main folder into it.
 4. Run the exe file, you are good to go.
-
+5. Example "**dist**" folder (or you can copy paste these necessary stuff to other place):
+   ![Example_folder](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/Package_App.PNG)
 ---
 
 # Theory
