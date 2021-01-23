@@ -160,7 +160,7 @@ Here is some CNN stuff,
 
 > Visualize CNN on predicting handwritten digit: https://www.cs.ryerson.ca/~aharley/vis/conv/
 
-![Handwritten CNN digit](https://github.com/CheahWen/UCSI_ALPR/blob/main/img_log/handwritten_demo.PNG)
+![Handwritten CNN digit](img_log/OCR_demo.gif)
 
 > Recommed Sung Kim course (for absolute beginner): https://www.bilibili.com/video/av71398626/
 
