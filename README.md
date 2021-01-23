@@ -231,6 +231,15 @@ Here is some CNN stuff,
 
 > You can change app name, app icon, video placeholder image, models path and so on.
 
+## Log files: (e.g: Log.2021-01-17.log)
+> Store all logging including info log and error log.
+
+> The log file is automatically created upon running the app each day taking the current date as name.
+
+## CSV file: (e.g: csv/result_2021-01-17.csv)
+> Store all detected car plate number regardless unregistered or registered car plate number in MySQL. Hence, you can further observe the detection here.
+
+> The csv file is the same as the log file, automatically created upon running the app each day taking the current date as name.
 
 ---
 
