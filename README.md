@@ -12,6 +12,21 @@
 
 ---
 
+## App Demo
+### Webcam
+
+> ![Example1](img_log/Example1.PNG)
+
+> ![Example2](img_log/Example2.PNG)
+
+> ![Example3](img_log/Example3.PNG)
+
+### Video file
+
+> ![Example3](img_log/Example3.PNG)
+
+---
+
 # Getting Started
 
 ## A) Setup NVIDIA GPU (Optional):
