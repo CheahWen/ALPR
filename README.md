@@ -23,7 +23,7 @@
 
 ### Video file
 
-> ![Example3](img_log/Example3.PNG)
+> ![VideoExample](img_log/Video_example.gif)
 
 ---
 
@@ -223,9 +223,14 @@ Here is some CNN stuff,
 8. gui.py: Contain instance of DB object, PlateDetector object, OCR object. Updating UI based on data flow, control all event of GUI.
 9. main.py: The starting point of the app. Contain ALPR class object inherit from Kivy App object, update the gui based on clock with fps 60 (```Clock.schedule_interval(self.gui.update, 1.0/60.0)```).
 
-## Others
-1. layout.kv: Declare the Kivy layout for the app.
-2. config.cfg: Store all neccessary configurations.
+## Layout file: layout.kv
+> Declare the Kivy layout for the app.
+
+## Config file: config.cfg
+> Store all neccessary configurations.
+
+> You can change app name, app icon, video placeholder image, models path and so on.
+
 
 ---
 
