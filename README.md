@@ -231,7 +231,7 @@ Here is some CNN stuff,
 
 > You can change app name, app icon, video placeholder image, models path and so on.
 
-## Log files: (e.g: Log.2021-01-17.log)
+## Log files: (e.g: LogFiles/Log.2021-01-17.log)
 > Store all logging including info log and error log.
 
 > The log file is automatically created upon running the app each day taking the current date as name.
