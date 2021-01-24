@@ -212,6 +212,10 @@ Here is some CNN stuff,
 ---
 
 # Files
+
+## Simplified Class Diagram
+![ClassDiagram](img_log/Class%20Diagram.png)
+
 ## Script (Only 9 scripts)
 1. ConfigParserManager.py: Read config file and pass the parsed data to respective script.
 2. LogManager.py: Record any log.
