@@ -42,7 +42,7 @@ class ALPRApp(App):
     myClock=Clock
     def build(self):
         self.title = app_title
-        Clock.schedule_interval(self.gui.update, 1.0/4.0)
+        Clock.schedule_interval(self.gui.update, 1.0/60.0)
         return self.gui
     def on_stop(self, *args):
         Clock.unschedule(self.gui.update)
