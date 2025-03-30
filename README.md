@@ -1,9 +1,7 @@
-# UCSI ALPR App
+# ALPR
 
 ---
 
-## Special thanks for the following Github repo
-### Source code references:
 > LP Detection: https://github.com/CheahWen/ConvALPR
 
 > OCR: https://github.com/sergiomsilva/alpr-unconstrained
